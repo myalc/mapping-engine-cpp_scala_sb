@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  engine:
+    build: ./engine/
+    # internal and external
+    ports:
+      - "8080"
+   receiver:
+    build: ./receiver/
+    # internal and external
+    ports:
+      - "8080"
+   ui:
+    build: ./ui/
+    # internal and external
+    ports:
+      - "8080"
+   simulator:
+    build: ./simulator/
+    # internal and external
+    ports:
+      - "8080"
+    # internal
+    expose:
+      - "8081"
