@@ -9,7 +9,6 @@ Http2Receiver::Http2Receiver(int port, KafkaProducer* producer): ReceiveAdapter(
 void Http2Receiver::terminate() {
     cout << "Terminate Http2Receiver" << endl;
     m_server->stop();
-    delete m_server;
 }
 
 void Http2Receiver::threaded_loop() {
@@ -21,7 +20,7 @@ void Http2Receiver::receive() {
 
     m_server->handle("/http2/api/v1/receive", [this](const nghttp2::asio_http2::server::request &req, const nghttp2::asio_http2::server::response &res) {
         thread::id this_id = this_thread::get_id();
-        cout << "Ping Request received at thread " << this_id << endl;
+        cout << "Request received at thread " << this_id << endl;
         req.on_data([this, &res](const uint8_t *data, size_t len) {
             if (len > 0) {
                 char buff[len + 1];
@@ -30,7 +29,7 @@ void Http2Receiver::receive() {
                 string uuid = this->m_producer->produce(buff);
 
                 std::ostringstream respss;
-                respss << "Message received. Message tag: " << uuid << endl;
+                respss << "{ \"tag:\": \"" << uuid << "\"}";
                 res.write_head(200);
                 res.end(respss.str());
             }
@@ -38,7 +37,7 @@ void Http2Receiver::receive() {
     });
 
 
-    m_server->num_threads(2);
+    m_server->num_threads(NUM_RECEIVE_THREADS);
     if (m_server->listen_and_serve(ec, "0.0.0.0", to_string(m_port), true)) {
         cerr << "error: " << ec.message() << endl;
     }

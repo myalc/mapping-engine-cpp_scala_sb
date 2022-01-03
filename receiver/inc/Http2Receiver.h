@@ -15,7 +15,6 @@ public:
 private:
     void receive();
     void threaded_loop();
-    void testBoost();
 
     int m_port;
     nghttp2::asio_http2::server::http2 *m_server;

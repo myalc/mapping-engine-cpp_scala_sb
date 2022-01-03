@@ -7,15 +7,16 @@ KafkaProducer::KafkaProducer() {
 }
 
 string KafkaProducer::produce(string payload) {
-    m_lock.lock();
+    //m_lock.lock();
     string uuid = send2kafka("topicx", payload);
-    m_lock.unlock();
+    //m_lock.unlock();
     return uuid;
 }
 
 string KafkaProducer::send2kafka(string topic, string payload) {
     cout << "KafkaProducer.send2kafka:" << topic << "-" << payload << endl;
     string uuid = getRandomUuid();
+    // TODO: kafka integration
     return uuid;
 }
 

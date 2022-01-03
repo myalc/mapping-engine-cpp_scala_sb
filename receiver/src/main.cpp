@@ -16,7 +16,7 @@ volatile int exit_request = 0;
 list<ReceiveAdapter*> receivers;
 
 void signal_handler(int sig) {
-	cout << sig << " signal handled" << endl;
+   cout << sig << " signal handled" << endl;
    // terminate using volatile variable
    exit_request = 1;
 

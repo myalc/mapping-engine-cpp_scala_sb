@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Transport.h"
+#include <nghttp2/asio_http2_client.h>
 
 TransportStrategyHttp2::TransportStrategyHttp2(std::string dest, int port): TransportStrategy(dest, port) { 
     std::ostringstream ss;
@@ -20,7 +21,11 @@ void TransportStrategyHttp2::transport(std::string payload) {
 
         auto printer = [](const nghttp2::asio_http2::client::response &res) {
             res.on_data([](const uint8_t *data, std::size_t len) {
-                std::cout.write(reinterpret_cast<const char *>(data), len);
+                if (len > 0) {
+                    std::cout << "Response: ";
+                    std::cout.write(reinterpret_cast<const char *>(data), len);
+                    std::cout << std::endl;
+                }
             });
         };
 

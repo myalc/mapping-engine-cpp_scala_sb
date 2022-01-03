@@ -1,5 +1,4 @@
 #include "common.h"
-#include <nghttp2/asio_http2_client.h>
 
 // Consider using adapter pattern instead of strategy
 // https://stackoverflow.com/questions/46023431/difference-between-strategy-pattern-and-adapter
@@ -57,11 +56,7 @@ class TransportStrategyHttp2: public TransportStrategy {
 public:
     TransportStrategyHttp2(std::string dest, int port);
     void transport(std::string payload);
-    void terminate();
 private:
-    boost::asio::io_service *m_io_service;
-    nghttp2::asio_http2::client::session *m_session;
     std::string m_uri;
-    bool m_has_session;
 };
 #endif /* TRANSPORTHTTP2_H_ */

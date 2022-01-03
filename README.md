@@ -36,3 +36,14 @@ docker run -d -p 8080:8080 myalc/mappingengine/simulator
 
 docker exec -it <id> bash
 ```
+
+Install nghttp2
+```bash
+wget https://github.com/nghttp2/nghttp2/releases/download/v1.46.0/nghttp2-1.46.0.tar.bz2
+tar xf nghttp2-1.46.0.tar.bz2
+cd nghttp2-1.46.0/
+./configure --enable-asio-lib
+sudo make install
+ls -la /usr/local/lib/
+ls -la /usr/local/include/nghttp2
+```

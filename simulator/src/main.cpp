@@ -17,7 +17,7 @@ using namespace std;
 volatile int exit_request = 0;
 
 void signal_handler(int sig) {
-	cout << sig << " signal handled" << endl;
+   cout << sig << " signal handled" << endl;
    exit_request = 1;
 }
 
@@ -49,13 +49,6 @@ int main(int argc, char *argv[]){
    thread th3(vs1);
    sensors.push_back(&vs1);
    threads.push_back(&th3);
-
-   /* sample uuids
-   cbd32d26-ac0d-47e4-9161-8efd4340a540
-   234ca97b-82bf-4b54-b283-1faadb043411
-   fdc05df2-887f-460b-b207-ecb0766cbbcb
-   8b42ed52-6c7b-4ef1-a319-3f789d4ffa40
-   */
 
    // join threads
    list<thread*>::iterator it;
