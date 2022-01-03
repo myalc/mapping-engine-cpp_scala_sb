@@ -6,13 +6,12 @@
 #include "ReceiveAdapter.h"
 #include "TcpReceiver.h"
 #include "KafkaProducer.h"
-using namespace std;
 
 class TcpReceiver: public ReceiveAdapter {
 public:
     TcpReceiver(KafkaProducer* producer);
 private:
-    string receive();
+    void receive();
     void threaded_loop();
 };
 

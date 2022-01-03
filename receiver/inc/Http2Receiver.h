@@ -6,14 +6,19 @@
 #include "ReceiveAdapter.h"
 #include "Http2Receiver.h"
 #include "KafkaProducer.h"
-using namespace std;
+#include <nghttp2/asio_http2_server.h>
 
 class Http2Receiver: public ReceiveAdapter {
 public:
-    Http2Receiver(KafkaProducer* producer);
+    Http2Receiver(int port, KafkaProducer* producer);
+    void terminate();
 private:
-    string receive();
+    void receive();
     void threaded_loop();
+    void testBoost();
+
+    int m_port;
+    nghttp2::asio_http2::server::http2 *m_server;
 };
 
 #endif /* HTTP2RECEIVER_H_ */

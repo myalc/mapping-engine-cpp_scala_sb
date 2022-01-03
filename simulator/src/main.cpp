@@ -26,21 +26,21 @@ int main(int argc, char *argv[]){
    signal(SIGTERM, signal_handler);
    signal(SIGINT, signal_handler);
 
-   TransportStrategyTcp tTcp;
-   TransportStrategyUdp tUdp;
-   TransportStrategyHttp tHttp;
-   TransportStrategyHttp2 tHttp2;
-
+   TransportStrategyHttp2 tHttp2("localhost", 8080);
+   /*TransportStrategyTcp tTcp("receiver", 8081);
+   TransportStrategyUdp tUdp("receiver", 8082);
+   TransportStrategyHttp tHttp("receiver", 8083);*/
+   
    list<AbstractSensor*> sensors;
    list<thread*> threads;
 
    // create sensors
-   TemperatureSensor ts1("b26e33f0-87f9-42db-8d91-d83f97369de4", &tTcp);
+   TemperatureSensor ts1("b26e33f0-87f9-42db-8d91-d83f97369de4", &tHttp2);
    thread th1(ts1);
    sensors.push_back(&ts1);
    threads.push_back(&th1);
 
-   HumiditySensor hs1("cbd32d26-ac0d-47e4-9161-8efd4340a540", &tUdp);
+   HumiditySensor hs1("cbd32d26-ac0d-47e4-9161-8efd4340a540", &tHttp2);
    thread th2(hs1);
    sensors.push_back(&hs1);
    threads.push_back(&th2);

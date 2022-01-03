@@ -11,13 +11,14 @@ class ReceiveAdapter {
 public:
     ReceiveAdapter(KafkaProducer* producer);
     virtual ~ReceiveAdapter() {}
+    virtual void terminate() {}
 
     void operator()() {
         threaded_loop();
     }
 
 protected:
-    virtual string receive() = 0;
+    virtual void receive() = 0;
     virtual void threaded_loop() = 0;
 
     KafkaProducer* m_producer;

@@ -13,9 +13,10 @@ class KafkaProducer {
 public:
     KafkaProducer();
     virtual ~KafkaProducer() {};
-    void produce(string topic, string payload);
+    string produce(string payload);
 private:
-    void send2kafka(string topic, string payload);
+    string send2kafka(string topic, string payload);
+    string getRandomUuid();
     std::mutex m_lock;
 };
 

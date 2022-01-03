@@ -12,7 +12,7 @@ class HttpReceiver: public ReceiveAdapter {
 public:
     HttpReceiver(KafkaProducer* producer);
 private:
-    string receive();
+    void receive();
     void threaded_loop();
 };
 

@@ -1,4 +1,5 @@
 #include "common.h"
+#include <nghttp2/asio_http2_client.h>
 
 // Consider using adapter pattern instead of strategy
 // https://stackoverflow.com/questions/46023431/difference-between-strategy-pattern-and-adapter
@@ -7,8 +8,15 @@
 #define TRANSPORT_H_
 class TransportStrategy {
 public:
+    TransportStrategy(std::string dest, int port) {
+        m_dest = dest;
+        m_port = port;
+    }
     virtual ~TransportStrategy() {}
     virtual void transport(std::string payload) = 0;
+protected:
+    std::string m_dest;
+    int m_port;
 };
 #endif /* TRANSPORT_H_ */
 
@@ -17,6 +25,7 @@ public:
 #define TRANSPORTTCP_H_
 class TransportStrategyTcp: public TransportStrategy {
 public:
+    TransportStrategyTcp(std::string dest, int port);
     void transport(std::string payload);
 };
 #endif /* TRANSPORTTCP_H_ */
@@ -26,6 +35,7 @@ public:
 #define TRANSPORTUDP_H_
 class TransportStrategyUdp: public TransportStrategy {
 public:
+    TransportStrategyUdp(std::string dest, int port);
     void transport(std::string payload);
 };
 #endif /* TRANSPORTUDP_H_ */
@@ -35,6 +45,7 @@ public:
 #define TRANSPORTHTTP_H_
 class TransportStrategyHttp: public TransportStrategy {
 public: 
+    TransportStrategyHttp(std::string dest, int port);
     void transport(std::string payload);
 };
 #endif /* TRANSPORTHTTP_H_ */
@@ -43,7 +54,14 @@ public:
 #ifndef TRANSPORTHTTP2_H_
 #define TRANSPORTHTTP2_H_
 class TransportStrategyHttp2: public TransportStrategy {
-public: 
+public:
+    TransportStrategyHttp2(std::string dest, int port);
     void transport(std::string payload);
+    void terminate();
+private:
+    boost::asio::io_service *m_io_service;
+    nghttp2::asio_http2::client::session *m_session;
+    std::string m_uri;
+    bool m_has_session;
 };
 #endif /* TRANSPORTHTTP2_H_ */

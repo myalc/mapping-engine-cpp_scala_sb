@@ -12,7 +12,7 @@ class UdpReceiver: public ReceiveAdapter {
 public:
     UdpReceiver(KafkaProducer* producer);
 private:
-    string receive();
+    void receive();
     void threaded_loop();
 };
 
