@@ -4,7 +4,7 @@ Simulator (C++) generates sensor (temperature, humudity, voltage) data randomly.
 
 Receiver (C++) receives sensor data over Http, Http2, Tcp, Udp and puts into Kafka. 
 
-Engine (scala-lagom) will gets messages from kafka, performs json mappings and puts to kafka. 
+Engine (scala-lagom) gets messages from kafka, performs json mappings and puts to kafka. 
 
 Ui (spring-boot) will demostrate received and transformed sensor data via web-sockets.
 

@@ -1,0 +1,11 @@
+{
+  "configName":"my.src4.tpc",
+  "srcSchema":"",
+  "dstSchema":"",
+  "mapping":"ewogICAgIm15RkEiOiB7e215RmllbGRBfX0sCiAgICAibXlGQiI6ICJ7e215RmllbGRCfX0iLAogICAgInRhMCI6IHsKICAgICAgICAiYSI6ICJ7e3RhLyowL2N9fSIsCiAgICAgICAgImIiOiAie3t0YS8qMC9kfX0iLAogICAgICAgICJkeW1teSI6ICJkdW1teSIKICAgIH0sCiAgICAidGExIjoge3t0YS8qMX19Cn0=",
+  "transform":true,
+  "dstTopic":"my.dst2.tcp",
+  "result2kafka":false,
+  "validateScr":true,
+  "validateDst":true
+}

@@ -17,7 +17,6 @@ void Http2Receiver::threaded_loop() {
 
 void Http2Receiver::receive() {
     boost::system::error_code ec;
-
     m_server->handle("/http2/api/v1/receive", [this](const nghttp2::asio_http2::server::request &req, const nghttp2::asio_http2::server::response &res) {
         thread::id this_id = this_thread::get_id();
         cout << "Request received at thread " << this_id << endl;

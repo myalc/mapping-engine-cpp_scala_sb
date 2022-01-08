@@ -1,0 +1,11 @@
+{
+  "configName":"my.src91.tpc",
+  "srcSchema":"",
+  "dstSchema":"",
+  "mapping":"ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAiZm5jMSI6ICJ7eyNmdW5jX3dyYXBwZWR9fXt7bXlGaWVsZEJ9fSBpcyBhd2Vzb21lLnt7L2Z1bmNfd3JhcHBlZH19IiwKICAgICJmbmMyIjogInt7I2Z1bmNfd3JhcHBlZDJ9fXt7bXlGaWVsZEJ9fXxkfHt7dGEvKjAvY319fGR8e3tteUZpZWxkQX19e3svZnVuY193cmFwcGVkMn19Igp9",
+  "transform":true,
+  "dstTopic":"my.dst2.tcp",
+  "result2kafka":false,
+  "validateScr":true,
+  "validateDst":true
+}

@@ -8,6 +8,8 @@ TransportStrategyHttp2::TransportStrategyHttp2(std::string dest, int port): Tran
     m_uri = ss.str();
 }
 
+// TODO: Send messages with a single session. Open session and use multiple times. When the session gets broken recover automatically. 
+
 void TransportStrategyHttp2::transport(std::string payload) {
     std::cout << "Transport over Http2: " << payload << std::endl;
     

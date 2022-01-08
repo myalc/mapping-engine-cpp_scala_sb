@@ -1,0 +1,11 @@
+{
+   "configName": "mapping.sensor.temperature",
+   "srcSchema":"",
+   "dstSchema":"",
+   "mapping":"ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAiYSI6ICJ7e3QvYX19IiwKICAgICJiIjogInt7dC9ifX0iCn0=",
+   "transform":true,
+   "dstTopic":"engine.mapper.outbound.sensor",
+   "result2kafka":false,
+   "validateScr":false,
+   "validateDst":false
+}
