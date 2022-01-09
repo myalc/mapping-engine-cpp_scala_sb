@@ -2,8 +2,7 @@ import com.lightbend.lagom.core.LagomVersion
 
 name := "mapping-engine"
 version := "0.1"
-scalaVersion in ThisBuild := "2.13.5"
-
+scalaVersion in ThisBuild := "2.13.7"
 version in ThisBuild := "1.0-SNAPSHOT"
 organization in ThisBuild := "com.myalc"
 

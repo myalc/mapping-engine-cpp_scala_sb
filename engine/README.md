@@ -43,7 +43,7 @@ sbt clean compile
 sbt runAll
 ```
 
-## Send messages with kafka-console-producer.sh
+## Send message with kafka-console-producer.sh
 Below is the sample message that receiver C++ application sends to engine application.
 ```sh
 ~/kafka_2.13-3.0.0/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic engine.mapper.inbound.sensor.voltage

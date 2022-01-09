@@ -4,7 +4,7 @@ Use links to encode/decode base64 strings:
 * https://www.base64encode.org/
 * https://www.base64decode.org/
 
-Sample source data 1
+Sample source data
 ```json
 {
    "myFieldA":1,
@@ -48,19 +48,19 @@ Sample source data 1
 }
 ```
 
-```json
 config1.json mapping
+```json
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
     "a": "{{t/a}}",
     "b": "{{t/b}}"
 }
-base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAiYSI6ICJ7e3QvYX19IiwKICAgICJiIjogInt7dC9ifX0iCn0=
 ```
+base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAiYSI6ICJ7e3QvYX19IiwKICAgICJiIjogInt7dC9ifX0iCn0=
 
-```json
 config2.json mapping
+```json
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -69,11 +69,11 @@ config2.json mapping
     "ta0c": "{{ta/*0/c}}",
     "ta0d": "{{ta/*0/d}}"
 }
-base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEiOiAie3t0L2F9fSIsCiAgICAidGIiOiAie3t0L2J9fSIsCiAgICAidGEwYyI6ICJ7e3RhLyowL2N9fSIsCiAgICAidGEwZCI6ICJ7e3RhLyowL2R9fSIKfQ==
 ```
+base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEiOiAie3t0L2F9fSIsCiAgICAidGIiOiAie3t0L2J9fSIsCiAgICAidGEwYyI6ICJ7e3RhLyowL2N9fSIsCiAgICAidGEwZCI6ICJ7e3RhLyowL2R9fSIKfQ==
 
+config3.json mapping
 ```sh
-config3.json mapping:
 {
     "myFA": {{myFieldA}},
     "myFB": {{myFieldB}},
@@ -86,11 +86,11 @@ config3.json mapping:
         "d": {{ta/*1/d}}
     }
 }
-base64: ewogICAgIm15RkEiOiB7e215RmllbGRBfX0sCiAgICAibXlGQiI6IHt7bXlGaWVsZEJ9fSwKICAgICJ0YTAiOiB7CiAgICAgICAgImMiOiB7e3RhLyowL2N9fSwKICAgICAgICAiZCI6IHt7dGEvKjAvZH19CiAgICB9LAogICAgInRhMSI6IHsKICAgICAgICAiYyI6IHt7dGEvKjEvY319LAogICAgICAgICJkIjoge3t0YS8qMS9kfX0KICAgIH0KfQ==
 ```
+base64: ewogICAgIm15RkEiOiB7e215RmllbGRBfX0sCiAgICAibXlGQiI6IHt7bXlGaWVsZEJ9fSwKICAgICJ0YTAiOiB7CiAgICAgICAgImMiOiB7e3RhLyowL2N9fSwKICAgICAgICAiZCI6IHt7dGEvKjAvZH19CiAgICB9LAogICAgInRhMSI6IHsKICAgICAgICAiYyI6IHt7dGEvKjEvY319LAogICAgICAgICJkIjoge3t0YS8qMS9kfX0KICAgIH0KfQ==
 
+config4.json mapping
 ```sh
-config4.json mapping:
 {
     "myFA": {{myFieldA}},
     "myFB": "{{myFieldB}}",
@@ -101,11 +101,11 @@ config4.json mapping:
     },
     "ta1": {{ta/*1}}
 }
-base64: ewogICAgIm15RkEiOiB7e215RmllbGRBfX0sCiAgICAibXlGQiI6ICJ7e215RmllbGRCfX0iLAogICAgInRhMCI6IHsKICAgICAgICAiYSI6ICJ7e3RhLyowL2N9fSIsCiAgICAgICAgImIiOiAie3t0YS8qMC9kfX0iLAogICAgICAgICJkeW1teSI6ICJkdW1teSIKICAgIH0sCiAgICAidGExIjoge3t0YS8qMX19Cn0=
 ```
+base64: ewogICAgIm15RkEiOiB7e215RmllbGRBfX0sCiAgICAibXlGQiI6ICJ7e215RmllbGRCfX0iLAogICAgInRhMCI6IHsKICAgICAgICAiYSI6ICJ7e3RhLyowL2N9fSIsCiAgICAgICAgImIiOiAie3t0YS8qMC9kfX0iLAogICAgICAgICJkeW1teSI6ICJkdW1teSIKICAgIH0sCiAgICAidGExIjoge3t0YS8qMX19Cn0=
 
+config5.json mapping
 ```sh
-config5.json mapping:
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -118,11 +118,11 @@ config5.json mapping:
     "myar1": {{ar1}},
     "myar2": {{ar2}}
 }
-base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fQp9
 ```
+base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fQp9
 
+config6.json mapping
 ```sh
-config6.json mapping:
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -136,11 +136,11 @@ config6.json mapping:
     "myar2": {{ar2}},
     "myar3": {{ar3}}
 }
+```
 base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fSwKICAgICJteWFyMyI6IHt7YXIzfX0KfQ==
-```
 
+config7.json mapping
 ```
-config7.json
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -161,12 +161,11 @@ config7.json
         }
         {{/ar4}}
 }
+```
 base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fSwKICAgICJteWFyMyI6IHt7YXIzfX0sCiAgICAibXlPYmoxIjoKICAgICAgICB7eyNhcjR9fQogICAgICAgIHsKICAgICAgICAgICAgImFhIjogInt7YXR0cjF9fSIsCiAgICAgICAgICAgICJjYyI6IHt7YXR0cjJ9fQogICAgICAgIH0KICAgICAgICB7ey9hcjR9fQp9
-```
 
-Handle multiple not nested loops in mapping 
+Handle multiple not nested loops in mapping. config8.json mapping
 ```
-config8.json
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -194,12 +193,11 @@ config8.json
         }
         {{/ar3}}
 }
-base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fSwKICAgICJteWFyMyI6IHt7YXIzfX0sCiAgICAibXlPYmoxIjoKICAgICAgICB7eyNhcjR9fQogICAgICAgIHsKICAgICAgICAgICAgImFhIjogInt7YXR0cjF9fSIsCiAgICAgICAgICAgICJjYyI6IHt7YXR0cjJ9fQogICAgICAgIH0KICAgICAgICB7ey9hcjR9fSwKICAgICJteU9iajIiOgogICAgICAgIHt7I2FyM319CiAgICAgICAgewogICAgICAgICAgICAieHgiOiB7e2F0dHIyfX0sCiAgICAgICAgICAgICJ5eSI6ICJ7e2F0dHIxfX0iCiAgICAgICAgfQogICAgICAgIHt7L2FyM319Cn0=
 ```
+base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fSwKICAgICJteWFyMyI6IHt7YXIzfX0sCiAgICAibXlPYmoxIjoKICAgICAgICB7eyNhcjR9fQogICAgICAgIHsKICAgICAgICAgICAgImFhIjogInt7YXR0cjF9fSIsCiAgICAgICAgICAgICJjYyI6IHt7YXR0cjJ9fQogICAgICAgIH0KICAgICAgICB7ey9hcjR9fSwKICAgICJteU9iajIiOgogICAgICAgIHt7I2FyM319CiAgICAgICAgewogICAgICAgICAgICAieHgiOiB7e2F0dHIyfX0sCiAgICAgICAgICAgICJ5eSI6ICJ7e2F0dHIxfX0iCiAgICAgICAgfQogICAgICAgIHt7L2FyM319Cn0=
 
-Handle custom functions like datetime format converter, trim, etc
+Handle custom functions like datetime format converter, trim, etc... config9.json mapping
 ```sh
-config9.json
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -211,11 +209,11 @@ config9.json
     "ta1": {{ta/*1}},
     "fnc1": "{{#func_wrapped}}{{myFieldB}} is awesome.{{/func_wrapped}}"
 }
-base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAiZm5jMSI6ICJ7eyNmdW5jX3dyYXBwZWR9fXt7bXlGaWVsZEJ9fSBpcyBhd2Vzb21lLnt7L2Z1bmNfd3JhcHBlZH19Igp9
 ```
+base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAiZm5jMSI6ICJ7eyNmdW5jX3dyYXBwZWR9fXt7bXlGaWVsZEJ9fSBpcyBhd2Vzb21lLnt7L2Z1bmNfd3JhcHBlZH19Igp9
 
+config91.json mapping
 ```sh
-config91.json
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -228,11 +226,11 @@ config91.json
     "fnc1": "{{#func_wrapped}}{{myFieldB}} is awesome.{{/func_wrapped}}",
     "fnc2": "{{#func_wrapped2}}{{myFieldB}}|d|{{ta/*0/c}}|d|{{myFieldA}}{{/func_wrapped2}}"
 }
-base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAiZm5jMSI6ICJ7eyNmdW5jX3dyYXBwZWR9fXt7bXlGaWVsZEJ9fSBpcyBhd2Vzb21lLnt7L2Z1bmNfd3JhcHBlZH19IiwKICAgICJmbmMyIjogInt7I2Z1bmNfd3JhcHBlZDJ9fXt7bXlGaWVsZEJ9fXxkfHt7dGEvKjAvY319fGR8e3tteUZpZWxkQX19e3svZnVuY193cmFwcGVkMn19Igp9
 ```
+base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAiZm5jMSI6ICJ7eyNmdW5jX3dyYXBwZWR9fXt7bXlGaWVsZEJ9fSBpcyBhd2Vzb21lLnt7L2Z1bmNfd3JhcHBlZH19IiwKICAgICJmbmMyIjogInt7I2Z1bmNfd3JhcHBlZDJ9fXt7bXlGaWVsZEJ9fXxkfHt7dGEvKjAvY319fGR8e3tteUZpZWxkQX19e3svZnVuY193cmFwcGVkMn19Igp9
 
-```sh
-config10:
+config10 mapping
+```
 {
     "myFA": "{{myFieldA}}",
     "myFB": "{{myFieldB}}",
@@ -262,8 +260,8 @@ config10:
     "fnc1": "{{#func_wrapped}}{{myFieldB}} is awesome.{{/func_wrapped}}",
     "fnc2": "{{#func_wrapped2}}{{myFieldB}}|d|{{ta/*0/c}}|d|{{myFieldA}}{{/func_wrapped2}}"
 }
-base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fSwKICAgICJteWFyMyI6IHt7YXIzfX0sCiAgICAibXlPYmoxIjoKICAgICAgICB7eyNhcjR9fQogICAgICAgIHsKICAgICAgICAgICAgImFhIjogInt7YXR0cjF9fSIsCiAgICAgICAgICAgICJjYyI6IHt7YXR0cjJ9fQogICAgICAgIH0KICAgICAgICB7ey9hcjR9fSwKICAgICJteU9iajIiOgogICAgICAgIHt7I2FyM319CiAgICAgICAgewogICAgICAgICAgICAieHgiOiB7e2F0dHIyfX0sCiAgICAgICAgICAgICJ5eSI6ICJ7e2F0dHIxfX0iCiAgICAgICAgfQogICAgICAgIHt7L2FyM319LAogICAgImZuYzEiOiAie3sjZnVuY193cmFwcGVkfX17e215RmllbGRCfX0gaXMgYXdlc29tZS57ey9mdW5jX3dyYXBwZWR9fSIsCiAgICAiZm5jMiI6ICJ7eyNmdW5jX3dyYXBwZWQyfX17e215RmllbGRCfX18ZHx7e3RhLyowL2N9fXxkfHt7bXlGaWVsZEF9fXt7L2Z1bmNfd3JhcHBlZDJ9fSIKfQ==
 ```
+base64: ewogICAgIm15RkEiOiAie3tteUZpZWxkQX19IiwKICAgICJteUZCIjogInt7bXlGaWVsZEJ9fSIsCiAgICAidGEwIjogewogICAgICAgICJhIjogInt7dGEvKjAvY319IiwKICAgICAgICAiYiI6ICJ7e3RhLyowL2R9fSIsCiAgICAgICAgImR5bW15IjogImR1bW15IgogICAgfSwKICAgICJ0YTEiOiB7e3RhLyoxfX0sCiAgICAibXlhcjEiOiB7e2FyMX19LAogICAgIm15YXIyIjoge3thcjJ9fSwKICAgICJteWFyMyI6IHt7YXIzfX0sCiAgICAibXlPYmoxIjoKICAgICAgICB7eyNhcjR9fQogICAgICAgIHsKICAgICAgICAgICAgImFhIjogInt7YXR0cjF9fSIsCiAgICAgICAgICAgICJjYyI6IHt7YXR0cjJ9fQogICAgICAgIH0KICAgICAgICB7ey9hcjR9fSwKICAgICJteU9iajIiOgogICAgICAgIHt7I2FyM319CiAgICAgICAgewogICAgICAgICAgICAieHgiOiB7e2F0dHIyfX0sCiAgICAgICAgICAgICJ5eSI6ICJ7e2F0dHIxfX0iCiAgICAgICAgfQogICAgICAgIHt7L2FyM319LAogICAgImZuYzEiOiAie3sjZnVuY193cmFwcGVkfX17e215RmllbGRCfX0gaXMgYXdlc29tZS57ey9mdW5jX3dyYXBwZWR9fSIsCiAgICAiZm5jMiI6ICJ7eyNmdW5jX3dyYXBwZWQyfX17e215RmllbGRCfX18ZHx7e3RhLyowL2N9fXxkfHt7bXlGaWVsZEF9fXt7L2Z1bmNfd3JhcHBlZDJ9fSIKfQ==
 
 
 Test hello world API
