@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1"></meta>
+    <title>MappingEngine-UI</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet"></link>
+</head>
+<body>
+    <h2>Styled Heading</h2>
+	<div th:if="${configs != null}">
+		<h3>Configs:</h3>
+		<ul>
+		 	<th:block th:object="${configs}">
+				<li th:each="item : ${configs}" th:text="${item.configName}"></li>
+            </th:block>
+		</ul>
+	</div>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
